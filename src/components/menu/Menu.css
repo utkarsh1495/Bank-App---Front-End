@@ -1,0 +1,20 @@
+span {
+    background-color: transparent;
+    font-size: 25px;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+span.Home.selected,
+span.News.selected,
+span.Contact.selected,
+span.About.selected {
+    background-color: darkred;
+}
+
+.menu {
+    margin-top: 50px;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
