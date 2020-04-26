@@ -1,0 +1,8 @@
+.manageApp { 
+    display: flex;
+}
+
+.slideContent {
+    margin-left: 15%;
+    margin-top: 5%;
+}

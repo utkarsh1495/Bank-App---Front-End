@@ -5,6 +5,10 @@ const config = [
         component: containers.MainPage,
     },
     {
+        path: "/application",
+        component: containers.ManageApplicationPage,
+    },
+    {
         path: "/",
         component: containers.MainPage,
     },

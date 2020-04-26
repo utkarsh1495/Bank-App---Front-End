@@ -1,41 +1,48 @@
-import React, { PureComponent } from 'react';
-import './Menu.css';
-import MenuItem from '../menuItem'
+import React from 'react';
+import { Menu } from 'antd';
+import { HomeOutlined, PhoneOutlined, MailOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import MenuItem from '../menuItem';
 
-export default class Menu extends PureComponent {
-    constructor() {
-        super()
-        this.state = {
-            itemSelected: 'Home'
-        }
-    }
-    handleOnClick = (itemName) => {
+class AppMenu extends React.Component {
+    state = {
+        itemSelected: 'home',
+    };
+
+    handleClick = e => {
         this.setState({
-            itemSelected: itemName
-        })
-    }
+            itemSelected: e.key,
+        });
+    };
+
     render() {
-        const menuItems = ['Home', 'News', 'Contact', 'About']
-        const modifiedMenuItemClassNames = menuItems.map(item => {
-            let trimmedItem = item.trim()
-            if (trimmedItem === this.state.itemSelected)
-                return `${trimmedItem} selected`
-            return trimmedItem
-        })
+        const menuItemProps = {
+            itemSelected: this.state.itemSelected,
+            ...this.props
+        }
         return (
             <React.Fragment>
-                <div className="menu">
-                    {
-                        modifiedMenuItemClassNames.map(item => {
-                            return <span className={item}
-                                onClick={() => { this.handleOnClick(item.split(' ')[0]) }}>
-                                {item.toUpperCase().split(' ')[0]}
-                            </span>
-                        })
-                    }
-                </div>
-                <MenuItem itemSelected={this.state.itemSelected} />
+                <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
+                    <Menu.Item key="home">
+                        <HomeOutlined />
+                        Home
+        </Menu.Item>
+                    <Menu.Item key="news">
+                        <MailOutlined />
+                        News
+        </Menu.Item>
+                    <Menu.Item key="contact">
+                        <PhoneOutlined />
+                        Contact
+        </Menu.Item>
+                    <Menu.Item key="about">
+                        <InfoCircleOutlined />
+                        About Us
+        </Menu.Item>
+                </Menu>
+                <MenuItem {...menuItemProps} />
             </React.Fragment>
-        )
+        );
     }
 }
+
+export default AppMenu;

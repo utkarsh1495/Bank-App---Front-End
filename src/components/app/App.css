@@ -1,24 +1,10 @@
-.App {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #01C3A7;
-}
-
-.nameContainer {
-  height: 20%;
-  background-color: brown;
-}
+@import '~antd/dist/antd.css';
 
 .name {
-  color: #FFFFFF;
-  font-size: 65px;
+  color: black;
+  font-size: 45px;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 300;
-  justify-content: center;
-  /* flex-direction: column; */
-  /* text-align: center; */
-  display: flex;
+  text-align: center;
+  background-color: lightblue;
 }

@@ -1,0 +1,9 @@
+.loginForm {
+    display: inline-block;
+    width: 50%;
+}
+
+.alertMessage {
+    margin-left: 33%;
+    margin-bottom: 5%;
+}

@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import App from '../components/app';
+import ManageApplication from '../components/manageApplication';
 
 import EmployeeActions from '../actions/EmployeeActions';
 import Constants from '../config/Constants'
 
-class MainPage extends Component {
+class ManageApplicationPage extends Component {
     render() {
         return (
-            <App {...this.props}/>
+            <ManageApplication {...this.props}/>
         )   
     }
 }
 
 export function mapStateToProps(state) {
-    return state
+    return {
+        userName: state.Employee.userName,
+        token: state.Employee.token,
+    }
 }
 
 export function mapDispatchToProps(dispatch) {
@@ -31,4 +34,4 @@ export function mapDispatchToProps(dispatch) {
 }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainPage);
+export default connect(mapStateToProps, mapDispatchToProps)(ManageApplicationPage);
