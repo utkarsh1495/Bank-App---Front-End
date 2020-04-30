@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-class WelcomePage extends Component {
+class PostNews extends Component {
   render() {
     return (
-      <div>
+      <div className='slideContent'>
           <h3>This feature will be available soon</h3>
       </div>
     );
   }
 }
 
-export default WelcomePage;
+export default PostNews;
 

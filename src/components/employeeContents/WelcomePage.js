@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class WelcomePage extends Component {
   render() {
     return (
-      <div>
+      <div className='slideContent'>
           <h2>Welcome {this.props.userName}</h2>
           <h4>
               From here you can manage all the banking facilities.

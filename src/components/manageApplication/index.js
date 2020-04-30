@@ -19,20 +19,25 @@ class ManageApplication extends Component {
       selectedItem: key
     })
   }
+
   render() {
+    const manageAccountProps = {
+      fetchAccounts: this.props.fetchAccounts,
+      ...this.props
+    }
     const displaySlideMenuContent = {
       'home': <WelcomePage userName={this.props.userName} />,
-      'addCustomer': <AddCustomer />,
-      'manageCustomer': <ManageCustomers />,
+      'addCustomer': <AddCustomer handleSubmit={this.props.createAccount}/>,
+      'manageCustomer': <ManageCustomers {...manageAccountProps}/>,
       'postNews': <PostNews />,
       'logout': <Logout />
     }
     return (
       <div className='manageApp'>
-        <SlideMenu getSelectedItem={this.handleSelectedItem} />
-        <div className='slideContent'>
-          {displaySlideMenuContent[this.state.selectedItem]}
+        <div className='slideMenu'>
+          <SlideMenu getSelectedItem={this.handleSelectedItem} />
         </div>
+          {displaySlideMenuContent[this.state.selectedItem]}
       </div>
     );
   }

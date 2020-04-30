@@ -2,7 +2,26 @@
     display: flex;
 }
 
+.slideMenu {
+    background: #001529;
+}
+
 .slideContent {
-    margin-left: 15%;
+    margin-left: 20%;
     margin-top: 5%;
+}
+
+.slideContentAccount {
+    margin-left: 20%;
+    margin-top: 5%;
+    width: 40%;
+}
+
+.editButton {
+    background: none!important;
+    border: none;
+    color: #069;
+    font-weight: 400;
+    cursor: pointer;
+    outline:none;
 }

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import App from '../components/app';
 
-import EmployeeActions from '../actions/EmployeeActions';
+import EmployeeActions from '../actions/EmployeeActions'
 import Constants from '../config/Constants'
 
 class MainPage extends Component {

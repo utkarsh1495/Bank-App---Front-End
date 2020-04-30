@@ -1,9 +1,13 @@
 import axios from 'axios';
 import isEmpty from 'lodash/isEmpty';
 
+const getApiUrl = (url) => {
+    return `http://localhost:3000${url}`
+}
+
 const get = async (url, queryParams) => {
     try{
-        const response = await axios.get(url, queryParams)
+        const response = await axios.get(getApiUrl(url), queryParams)
         return response
     }
     catch(error){
@@ -12,13 +16,8 @@ const get = async (url, queryParams) => {
 }
 
 const post = async (url, requestBody) => {
-    // let axiosInstance = axios.create({
-    //     baseURL: 'http:localhost:3000'
-    //   });
-    
     try{
-        const apiUrl = `http://localhost:3000${url}`
-        const response = await axios.post(apiUrl, requestBody)
+        const response = await axios.post(getApiUrl(url), requestBody)
         return response
     }
     catch(error){
@@ -26,4 +25,14 @@ const post = async (url, requestBody) => {
     }
 }
 
-export default { get, post}
+const patch = async (url, requestBody) => {
+    try{
+        const response = await axios.patch(getApiUrl(url), requestBody)
+        return response
+    }
+    catch(error){
+        throw new Error(error)
+    }
+}
+
+export default { get, post, patch}
